@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page import="vn.filter.Sanitizer" %>
+
 <link href="<c:url value = "templates/css/style.css" />"
 	rel="stylesheet" type="text/css">
 
@@ -80,15 +82,6 @@
                       ${sessionScope.account.firstname} ${sessionScope.account.lastname} 
                     </div>
                   </div>
-                  <%-- <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Slug</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      ${sessionScope.account.slug}
-                    </div>
-                  </div> --%>
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
@@ -161,33 +154,7 @@
                     </div>
                   </div>
                   <hr>
-                  <%-- <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Cover</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      ${sessionScope.account.cover} 
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Date created: </h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      ${sessionScope.account.createdAt} 
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h6 class="mb-0">Date update:</h6>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      ${sessionScope.account.updatedAt} 
-                    </div>
-                  </div>
-                  <hr> --%>
+                  
                   <div class="row">
                     <div class="col-sm-12">
                       <a class="btn btn-info " data-toggle="modal" data-target="#editUser">Edit</a>
@@ -204,6 +171,7 @@
 <!-- Modal -->
 
  <div id="editUser" class="modal fade">
+ 			<c:set var="sanitizer" value="<%= new vn.filter.Sanitizer() %>" scope="request" />
             <div class="modal-dialog">
                 <div class="modal-content">
                     <form action="profile" method="post">
@@ -215,7 +183,10 @@
                         <div class="modal-body">	
                             <div class="form-group">
                                 <label>Id</label>
+                                
+                                
                                 <input name="id" value="${sessionScope.account._id}" type="text" class="form-control" readonly>
+                            	
                             </div>				
                             <div class="form-group">
                                 <label>First Name</label>
@@ -237,6 +208,7 @@
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input name="phone" type="text" value="${sessionScope.account.phone}"  class="form-control" required>
+                                
                             </div>
                             <div class="form-group">
                                 <label>Password</label>
@@ -265,7 +237,9 @@
                             
                         </div>
                         <div class="modal-footer">
+                        	
                             <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+							
                             <input type="submit" class="btn btn-success" value="Edit">
                         </div>
                     </form>
@@ -273,5 +247,8 @@
             </div>
         </div>
 <script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+
+		</script>
 

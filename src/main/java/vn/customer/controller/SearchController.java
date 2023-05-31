@@ -38,6 +38,7 @@ public class SearchController extends HttpServlet {
 		req.setCharacterEncoding("UTF-8");
 		//lay tham so tu JSP
 		String txtSearch = req.getParameter("txt");
+		
 		//buoc 1: Khai tao DAO
 		ProductService modelService = new ProductServiceImpl();
 		CategoryDaoImpl categoryDao = new CategoryDaoImpl();

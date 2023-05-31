@@ -12,7 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import vn.dao.UserDao;
 import vn.models.*;
-
+import vn.filter.*;
 /**
  * Servlet implementation class ProfileController
  */
@@ -52,6 +52,7 @@ public class ProfileController extends HttpServlet {
 		String idcard = req.getParameter("idcard");
 		String username = req.getParameter("user");
 		String phone= req.getParameter("phone");
+		phone = Sanitizer.sanitize(phone);
 		String hashed_password = req.getParameter("hashed_password");
 		String addresses = req.getParameter("addresses");
 		String avatar = req.getParameter("avatar");

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlrewrite>
+    <rule>
+        <name>Prevent XSS</name>
+        <from>/*</from>
+        <set type="response-header" name="X-XSS-Protection">1; mode=block</set>
+    </rule>
+</urlrewrite>

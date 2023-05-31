@@ -23,7 +23,7 @@
 <link href="<c:url value = "/assets/templates/css/style.css" />" rel="stylesheet" type="text/css">
 </head>
 <body>
-<link href="${pageContext.request.contextPath}/assets/templates/css/order.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/assets/templates/css/order.css" rel="stylesheet" type="text/css"> 
 <div class="container">
     <div class="title">
         <h2>Đặt hàng</h2>

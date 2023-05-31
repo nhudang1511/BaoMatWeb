@@ -92,7 +92,7 @@
 									<c:set var="pageCutHigh" value="${tag+1 }"></c:set>
 									<c:if test="${tag>1 }">
 										<li class="page-item"><a class="page-link"
-											href="${pageContext.request.contextPath}/category?index=${tag-1}&index1=${tag1}">Previous</a></li>
+											href="${pageContext.request.contextPath}/category?index=${tag-1}&index1=${tag1}">Previous</a></li> 
 
 									</c:if>
 									<c:choose>

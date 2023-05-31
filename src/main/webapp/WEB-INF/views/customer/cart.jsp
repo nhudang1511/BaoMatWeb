@@ -4,8 +4,7 @@
 <link href="<c:url value = "templates/css/style.css" />"
 	rel="stylesheet" type="text/css">
 <%@ page import="vn.models.*"%>
-<%@ page import="java.util.List"%>
-<%@ page import="java.util.List"%>
+<%@ page import="java.util.List"%> 
 <body>
     <%@include file="/common/taglib.jsp"%>
 	<div class="container mb-4">
